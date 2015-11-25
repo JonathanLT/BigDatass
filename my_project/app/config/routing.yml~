@@ -1,0 +1,15 @@
+test_mongo:
+    resource: "@TestMongoBundle/Resources/config/routing.yml"
+    prefix:   /TestMongo
+
+acme_store:
+    resource: "@AcmeStoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+test:
+    resource: "@TestBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
