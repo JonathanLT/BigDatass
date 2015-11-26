@@ -1,0 +1,15 @@
+oc_platform:
+    resource: "@OCPlatformBundle/Resources/config/routing.yml"
+    prefix:   /OC
+
+test_mongo:
+    resource: "@TestMongoBundle/Resources/config/routing.yml"
+    prefix:   /TestMongo
+
+test:
+    resource: "@TestBundle/Resources/config/routing.yml"
+    prefix:   /test
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

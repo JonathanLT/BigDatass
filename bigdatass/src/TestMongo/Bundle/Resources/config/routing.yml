@@ -1,0 +1,3 @@
+test_mongo_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: TestMongoBundle:Default:index }

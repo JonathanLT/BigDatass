@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Symfony!</title>
+  </head>
+  <body>
+    <h1><?php echo $page_title ?></h1>
+    <ul id="navigation">
+      {% for item in data %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
