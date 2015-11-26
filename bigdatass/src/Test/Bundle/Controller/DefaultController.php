@@ -3,7 +3,7 @@
 namespace Test\Bundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-require_once('/var/www/html/my_project/vendor/j7mbo/twitter-api-php/TwitterAPIExchange.php');
+require_once('../vendor/j7mbo/twitter-api-php/TwitterAPIExchange.php');
 use TwitterAPIExchange;
 use MongoCollection;
 use MongoClient;
