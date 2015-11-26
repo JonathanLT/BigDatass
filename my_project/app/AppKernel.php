@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new Test\Bundle\TestBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new TestMongo\Bundle\TestMongoBundle(),
+            new OC\PlatformBundle\OCPlatformBundle(),
+            new Acme\StoreBundle\AcmeStoreBundle(),
 	);
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b1d809000f170e6b9607ceae4b94bd5f",
-    "content-hash": "0c489af02a9a5d1a85d1f44d1192d037",
+    "hash": "b5be2a6c15e336c6e6e3cd5aeabf97be",
+    "content-hash": "6fb97e8fa673859eced3628330ac11cc",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -764,16 +764,16 @@
         },
         {
             "name": "doctrine/mongodb-odm",
-            "version": "dev-master",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "46f34bc3fe9c83cc7a12522af1d6aa2da7b7f2ba"
+                "reference": "cb327d1e15a17159247d70255b7fab6bea5ad4b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/46f34bc3fe9c83cc7a12522af1d6aa2da7b7f2ba",
-                "reference": "46f34bc3fe9c83cc7a12522af1d6aa2da7b7f2ba",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/cb327d1e15a17159247d70255b7fab6bea5ad4b0",
+                "reference": "cb327d1e15a17159247d70255b7fab6bea5ad4b0",
                 "shasum": ""
             },
             "require": {
@@ -842,20 +842,20 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2015-11-14 11:44:07"
+            "time": "2015-11-03 14:58:21"
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
-            "version": "dev-master",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineMongoDBBundle.git",
-                "reference": "d66da72d4d43c40f8bf1a1fe6e6852096b72f00c"
+                "reference": "8ac34a2b62ecbe2e6d79697de6a02cdcb8613198"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/d66da72d4d43c40f8bf1a1fe6e6852096b72f00c",
-                "reference": "d66da72d4d43c40f8bf1a1fe6e6852096b72f00c",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/8ac34a2b62ecbe2e6d79697de6a02cdcb8613198",
+                "reference": "8ac34a2b62ecbe2e6d79697de6a02cdcb8613198",
                 "shasum": ""
             },
             "require": {
@@ -912,7 +912,7 @@
                 "persistence",
                 "symfony"
             ],
-            "time": "2015-10-05 13:40:46"
+            "time": "2015-08-31 13:07:17"
         },
         {
             "name": "doctrine/orm",
@@ -2026,8 +2026,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "doctrine/mongodb-odm": 20,
-        "doctrine/mongodb-odm-bundle": 20,
         "j7mbo/twitter-api-php": 20
     },
     "prefer-stable": false,
