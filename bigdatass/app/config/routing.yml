@@ -12,7 +12,7 @@ oc_platform:
 
 test:
     resource: "@TestBundle/Resources/config/routing.yml"
-    prefix:   /test
+    prefix:   /
 
 app:
     resource: "@AppBundle/Controller/"

@@ -4,11 +4,24 @@
 <div class="jumbotron">
   <div class="container">
     <h1><?= $page_title ?></h1>
-    <ul id="navigation" class="list-group">
+    <table class="table">
+      <thead>
+	<tr>
+	  <td>Date de tweet</td>
+	  <td>Tweet</td>
+	  <td>Login</a></td>
+	</tr>
+      </thead>
+      <tbody>
       {% for item in data %}
-      <li class="list-group-item">{{ item }}</li>
+      <tr>
+	<td>{{ item.created_at }}</td>
+	<td>{{ item.text }}</td>
+	<td><a href="https://twitter.com/{{item.username}}">{{ item.username }}</a></td>
+      </tr>
       {% endfor %}
-    </ul>
+      </tbody>
+    </table>
   </div>
 </div>
 {% endblock %}
