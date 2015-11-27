@@ -1,0 +1,6 @@
+// src/Test/Bundle/Resources/public/css/styles.css
+
+.body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}

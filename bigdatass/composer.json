@@ -19,8 +19,10 @@
         "incenteev/composer-parameter-handler": "~2.0",
 	"doctrine/mongodb-odm": "~1.0",
 	"doctrine/mongodb-odm-bundle": "^3.0",
-	"j7mbo/twitter-api-php": "dev-master"
-	
+	"j7mbo/twitter-api-php": "dev-master",
+	"jquery/jquery": "2.1.4",
+	"twitter/bootstrap": "2.3.*",
+	"leafo/lessphp": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
@@ -57,5 +59,18 @@
         "branch-alias": {
             "dev-master": "2.7-dev"
         }
-    }
+    },
+    "repositories": [
+	{
+	    "type": "package",
+	    "package": {
+		"name": "jquery/jquery",
+		"version": "2.1.4",
+		"dist": {
+		    "url": "http://code.jquery.com/jquery-2.1.4.min.js",
+		    "type": "file"
+		}
+	    }
+	}
+    ]
 }

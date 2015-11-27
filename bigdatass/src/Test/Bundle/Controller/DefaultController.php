@@ -2,8 +2,8 @@
 
 namespace Test\Bundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 require_once('../vendor/j7mbo/twitter-api-php/TwitterAPIExchange.php');
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use TwitterAPIExchange;
 use MongoCollection;
 use MongoClient;
@@ -50,5 +50,10 @@ class DefaultController extends Controller
       foreach ($cursor as $doc)
 	$tab[] = $doc["text"] . "\n";
       return $this->render('TestBundle:Default:show.html.twig', array("data", $tab));
+    }
+
+    public function newAction()
+    {
+      return $this->render('TestBundle:Default:show.html.twig', array("data", ["toto"]));
     }
 }
