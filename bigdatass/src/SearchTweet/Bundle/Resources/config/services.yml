@@ -1,4 +1,4 @@
 services:
-#    test.example:
-#        class: Test\Bundle\Example
+#   searchtweet.example:
+#        class: SearchTweet\Bundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]

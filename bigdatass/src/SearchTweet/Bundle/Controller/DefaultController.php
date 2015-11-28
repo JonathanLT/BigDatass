@@ -1,12 +1,12 @@
 <?php
 
-namespace Test\Bundle\Controller;
+namespace SearchTweet\Bundle\Controller;
 
 require_once('../vendor/j7mbo/twitter-api-php/TwitterAPIExchange.php');
 require_once('../vendor/datumboxapi/DatumboxAPI.php');
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Test\Bundle\Entity\Form_advanced;
+use SearchTweet\Bundle\Entity\Form_advanced;
 use TwitterAPIExchange;
 use MongoCollection;
 use DatumboxAPI;
@@ -16,7 +16,7 @@ class DefaultController extends Controller
 {
   public function indexAction()
   {
-    return $this->render('TestBundle:Default:index.html.twig');
+    return $this->render('SearchTweetBundle:Default:index.html.twig');
   }
 
   public function searchAction()
@@ -64,7 +64,7 @@ class DefaultController extends Controller
       $tab[$i]["id_str"] = "Null";
       $tab[$i]["SentimentA"] = "Null";
     }
-    return $this->render('TestBundle:Default:show.html.twig', array("data" => $tab));
+    return $this->render('SearchTweetBundle:Default:show.html.twig', array("data" => $tab));
   }
 
   public function searchadvancedAction()
@@ -139,7 +139,7 @@ class DefaultController extends Controller
       $tab[$i]["id_str"] = 'Null';
       $tab[$i]["SentimentA"] = 'Null';
     }
-    return $this->render('TestBundle:Default:show_advanced.html.twig', array("data" => $tab));
+    return $this->render('SearchTweetBundle:Default:show_advanced.html.twig', array("data" => $tab));
   }
 
   public function newAction(Request $request)
@@ -212,7 +212,7 @@ class DefaultController extends Controller
 						    'class' => 'btn btn-default',
 						    )))
       ->getForm();
-    return $this->render('TestBundle:Default:new.html.twig', array(
+    return $this->render('SearchTweetBundle:Default:new.html.twig', array(
 								   'form' => $form->createView(),
 								   ));
   }

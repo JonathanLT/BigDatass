@@ -10,8 +10,8 @@ oc_platform:
 #    resource: "@TestMongoBundle/Resources/config/routing.yml"
 #    prefix:   /TestMongo
 
-test:
-    resource: "@TestBundle/Resources/config/routing.yml"
+searchtweet:
+    resource: "@SearchTweetBundle/Resources/config/routing.yml"
     prefix:   /
 
 app:

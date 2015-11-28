@@ -1,6 +1,6 @@
 <?php
 
-namespace Test\Bundle\Tests\Controller;
+namespace SearchTweet\Bundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

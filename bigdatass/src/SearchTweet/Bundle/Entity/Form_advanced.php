@@ -1,6 +1,6 @@
 <?php
-// src/Test/Bundle/Entity/Form_advanced.php
-namespace Test\Bundle\Entity;
+// src/SearchTweet/Bundle/Entity/Form_advanced.php
+namespace SearchTweet\Bundle\Entity;
 
 class Form_advanced
 {

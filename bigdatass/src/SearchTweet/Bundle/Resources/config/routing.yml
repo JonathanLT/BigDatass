@@ -1,0 +1,15 @@
+tweet_searchpage:
+    path:     /search/
+    defaults: { _controller: SearchTweetBundle:Default:search }
+
+tweet_searchadvancedpage:
+    path:     /search_plus/
+    defaults: { _controller: SearchTweetBundle:Default:searchadvanced }
+
+bigdatass_homepage:
+    path:     /
+    defaults: { _controller: SearchTweetBundle:Default:index }
+
+query_homepage:
+    path:     /search-advanced
+    defaults: { _controller: SearchTweetBundle:Default:new }
