@@ -1,7 +1,15 @@
 tweet_searchpage:
-    path:     /search/{keyword}
-    defaults: { _controller: TestBundle:Default:search, keyword: yolo }
+    path:     /search/
+    defaults: { _controller: TestBundle:Default:search }
+
+tweet_searchadvancedpage:
+    path:     /search-ad/
+    defaults: { _controller: TestBundle:Default:searchadvanced }
 
 bigdatass_homepage:
     path:     /
     defaults: { _controller: TestBundle:Default:index }
+
+query_homepage:
+    path:     /search-advanced
+    defaults: { _controller: TestBundle:Default:new }

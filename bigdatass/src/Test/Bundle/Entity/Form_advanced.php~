@@ -1,0 +1,161 @@
+<?php
+// src/Test/Bundle/Entity/Form_advanced.php
+namespace Test\Bundle\Entity;
+
+class Form_advanced
+{
+  /**
+   * @Assert\Blank()
+   */
+  protected $allWordAnd;
+  /**
+   * @Assert\Blank()
+   */
+  protected $sentence;
+  /**
+   * @Assert\Blank()
+   */
+  protected $allWordOr;
+  /**
+   * @Assert\Blank()
+   */
+  protected $allWordNot;
+  /**
+   * @Assert\Blank()
+   */
+  protected $allTag;
+  /**
+   * @Assert\Blank()
+   */
+  protected $language;
+  /**
+   * @Assert\Blank()
+   */
+  protected $usernameFrom;
+  /**
+   * @Assert\Blank()
+   */
+  protected $usernameTo;
+  /**
+   * @Assert\Blank()
+   */
+  protected $usernameQuoted;
+  /**
+   * @Assert\Blank()
+   */
+  protected $geoloc;
+  /**
+   * @Assert\Blank()
+   */
+  protected $generation;
+
+  public function allWordAnd()
+  {
+    return $this->allWordAnd;
+  }
+
+  public function sentence()
+  {
+    return $this->sentence;
+  }
+
+  public function allWordOr()
+  {
+    return $this->allWordOr;
+  }
+
+  public function allWordNot()
+  {
+    return $this->allWordNot;
+  }
+
+  public function allTag()
+  {
+    return $this->allTag;
+  }
+
+  public function language()
+  {
+    return $this->language;
+  }
+
+  public function usernameFrom()
+  {
+    return $this->usernameFrom;
+  }
+
+  public function usernameTo()
+  {
+    return $this->usernameTo;
+  }
+
+  public function usernameQuoted()
+  {
+    return $this->usernameQuoted;
+  }
+
+  public function geoloc()
+  {
+    return $this->geoloc;
+  }
+
+  public function generation()
+  {
+    return $this->generation;
+  }
+
+  public function setallWordAnd($allWordAnd)
+  {
+    $this->allWordAnd = $allWordAnd;
+  }
+
+  public function setsentence($sentence)
+  {
+    $this->sentence = $sentence;
+  }
+
+  public function setallWordOr($allWordOr)
+  {
+    $this->allWordOr = $allWordOr;
+  }
+
+  public function setallWordNot($allWordNot)
+  {
+    $this->allWordNot = $allWordNot;
+  }
+
+  public function setallTag($allTag)
+  {
+    $this->allTag = $allTag;
+  }
+
+  public function setlanguage($language)
+  {
+    $this->language = $language;
+  }
+
+  public function setusernameFrom($usernameFrom)
+  {
+    $this->usernameFrom = $usernameFrom;
+  }
+
+  public function setusernameTo($usernameTo)
+  {
+    $this->usernameTo = $usernameTo;
+  }
+
+  public function setusernameQuoted($usernameQuoted)
+  {
+    $this->usernameQuoted = $usernameQuoted;
+  }
+
+  public function setgeoloc($geoloc)
+  {
+    $this->geoloc = $geoloc;
+  }
+
+  public function setgeneration($generation)
+  {
+    $this->generation = $generation;
+  }
+}
