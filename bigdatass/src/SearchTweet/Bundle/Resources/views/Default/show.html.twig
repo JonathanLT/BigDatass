@@ -3,9 +3,9 @@
 {% block body %}
 <div class="jumbotron">
   <div class="container">
-    <h1><?= $page_title ?></h1>
+    <h1>{{ search }}</h1>
+    <div id="mydonut" style="height: 250px;"></div>
   </div>
-  <div id="myfirstchart" style="height: 250px;"></div>
 </div>
 <div class="container">
   <table class="table">
@@ -13,7 +13,7 @@
       <tr>
 	<td>Date de tweet</td>
 	<td>Tweet</td>
-	<td>Login</td>
+	<td colspan="2">Login</td>
 	<td>SentimentAnalysis</td>
 	<td>URL</td>
       </tr>
@@ -23,6 +23,7 @@
       <tr>
 	<td>{{ item.created_at }}</td>
 	<td>{{ item.text }}</td>
+	<td><img src="{{ item.username_img }}" style="box-shadow:0 0 15px 5px grey;" /></td>
 	<td><a href="https://twitter.com/{{ item.username }}">{{ item.username }}</a></td>
 	<td class="{{ item.SentimentA }}">{{ item.SentimentA }}</td>
 	<td><a href="https://twitter.com/{{ item.username }}/status/{{ item.id_str }}">...</a></td>
@@ -33,7 +34,7 @@
 </div>
 <script>
   new Morris.Donut({
-  element: 'myfirstchart',
+  element: 'mydonut',
   data: [
   { label: 'Positive', value: $(".positive").length },
   { label: 'Neutral', value: $(".neutral").length },

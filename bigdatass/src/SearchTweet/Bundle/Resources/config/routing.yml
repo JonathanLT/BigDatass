@@ -11,5 +11,5 @@ bigdatass_homepage:
     defaults: { _controller: SearchTweetBundle:Default:index }
 
 query_homepage:
-    path:     /search-advanced
+    path:     /search_advanced
     defaults: { _controller: SearchTweetBundle:Default:new }

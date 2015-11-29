@@ -3,7 +3,30 @@
 {% block body %}
 <div class="jumbotron">
   <div class="container">
-    <h1>Bonjour</h1>
+    <h1>Welcome on <a href="{{ path('bigdatass_homepage') }}">BigDat'ass</a></h1>
+    <a class="btn btn-success" href="{{ path('query_homepage') }}">Advanced search</a>
   </div>
 </div>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+	<td>Search</td>
+	<td>Positive</td>
+	<td>Neutral</td>
+	<td>Negative</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in data|reverse|slice(0, 10) %}
+      <tr>
+	<td>{{ item.search }}</td>
+	<td>{{ item.stats.positive }}</td>
+	<td>{{ item.stats.neutral }}</td>
+	<td>{{ item.stats.negative }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</dib>
 {% endblock %}
