@@ -68,6 +68,7 @@ class DefaultController extends Controller
       $tab[$i]["username"] = 'Null';
       $tab[$i]["id_str"] = "Null";
       $tab[$i]["SentimentA"] = "Null";
+      $tab[$i]["username_img"] = "https://gp3.googleusercontent.com/-_aKQin46MIc/AAAAAAAAAAI/AAAAAAAAAAA/Vcs7-1e2R7E/s48-c-k-no/photo.jpg?sz=50";
     }
     $collection = new MongoCollection($db, 'recent');
     $collection->insert(array('search' => $keyword, 'stats' => array_count_values(array_map(function($foo){return $foo['SentimentA'];}, $tab))));
@@ -135,6 +136,7 @@ class DefaultController extends Controller
 	  $tab[$i]["username"] = $doc["user"]["screen_name"];
 	  $tab[$i]["username_img"] = $doc["user"]["profile_image_url"];
 	  $tab[$i]["id_str"] = $doc["id_str"];
+	  $tab[$i]["username_img"] = "https://gp3.googleusercontent.com/-_aKQin46MIc/AAAAAAAAAAI/AAAAAAAAAAA/Vcs7-1e2R7E/s48-c-k-no/photo.jpg?sz=50";
 	  $rand = rand(1, 3);   // Note à celui qui comment la ligne, il n'y a que 1000 requêtes/j, elles sont precieuses
 	  $tab[$i]["SentimentA"] = ($rand == 1 ? "negative" : ($rand == 3 ? "positive" : "neutral"));   // Note à celui qui comment la ligne, il n'y a que 1000 requêtes/j, elles sont precieuses
 	  //$tab[$i]["SentimentA"] = $DatumboxAPI->SentimentAnalysis($doc["text"]); // Note à celui qui décomment la ligne, il n'y a que 1000 requêtes/j, elles sont precieuses
