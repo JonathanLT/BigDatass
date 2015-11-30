@@ -20,6 +20,7 @@ class DefaultController extends Controller
     $db = $m->selectDB('bigdatass');
     $collection = new MongoCollection($db, 'recent');
     $data = $collection->find();
+    file_put_contents("/var/www/html/test", print_r($data, true));
     return $this->render('SearchTweetBundle:Default:index.html.twig', array("data" => $data));
   }
 
@@ -29,10 +30,12 @@ class DefaultController extends Controller
     $i = 0;
     if (isset($_POST["keyword"]) && !empty($_POST["keyword"])) {
       $keyword = addslashes($_POST["keyword"]);
+      $m = new MongoClient();
+      $db = $m->selectDB('bigdatass');
       if (isset($keyword) && !empty($keyword)) {
-	$m = new MongoClient();
-	$db = $m->selectDB('bigdatass');
 	$collection = new MongoCollection($db, 'tweets');
+	$cursor = $collection->find();
+	file_put_contents("/var/www/html/test", print_r($cursor, true));
 	$settings = array(
 			  'oauth_access_token' => "4283699608-BaKzBztpWnO4JQoXqbGr8tK3eOAHdw0baI1l1KZ",
 			  'oauth_access_token_secret' => "pbJVfRMPCrsgdjXddJL5E5y5ymrrO1dkWkUulDoVfu7lW",
@@ -60,7 +63,13 @@ class DefaultController extends Controller
 	    $tab[$i]["SentimentA"] = ($rand == 1 ? "negative" : ($rand == 3 ? "positive" : "neutral"));
 	    ++$i;
 	  }
+	if (!in_array(null, $tab)) {
+	  $collection = new MongoCollection($db, 'recent');
+	  $collection->insert(array('search' => $keyword, 'stats' => array_count_values(array_map(function($foo){return $foo['SentimentA'];}, $tab))));
+	}
       }
+    } else {
+      $keyword = "Null";
     }
     if (in_array(null, $tab)) {
       $tab[$i]["text"] = 'Null';
@@ -70,8 +79,6 @@ class DefaultController extends Controller
       $tab[$i]["SentimentA"] = "Null";
       $tab[$i]["username_img"] = "https://gp3.googleusercontent.com/-_aKQin46MIc/AAAAAAAAAAI/AAAAAAAAAAA/Vcs7-1e2R7E/s48-c-k-no/photo.jpg?sz=50";
     }
-    $collection = new MongoCollection($db, 'recent');
-    $collection->insert(array('search' => $keyword, 'stats' => array_count_values(array_map(function($foo){return $foo['SentimentA'];}, $tab))));
     return $this->render('SearchTweetBundle:Default:show.html.twig', array("data" => $tab, "search" => $keyword));
   }
 
@@ -136,12 +143,15 @@ class DefaultController extends Controller
 	  $tab[$i]["username"] = $doc["user"]["screen_name"];
 	  $tab[$i]["username_img"] = $doc["user"]["profile_image_url"];
 	  $tab[$i]["id_str"] = $doc["id_str"];
-	  $tab[$i]["username_img"] = "https://gp3.googleusercontent.com/-_aKQin46MIc/AAAAAAAAAAI/AAAAAAAAAAA/Vcs7-1e2R7E/s48-c-k-no/photo.jpg?sz=50";
 	  $rand = rand(1, 3);   // Note à celui qui comment la ligne, il n'y a que 1000 requêtes/j, elles sont precieuses
 	  $tab[$i]["SentimentA"] = ($rand == 1 ? "negative" : ($rand == 3 ? "positive" : "neutral"));   // Note à celui qui comment la ligne, il n'y a que 1000 requêtes/j, elles sont precieuses
 	  //$tab[$i]["SentimentA"] = $DatumboxAPI->SentimentAnalysis($doc["text"]); // Note à celui qui décomment la ligne, il n'y a que 1000 requêtes/j, elles sont precieuses
 	  ++$i;
 	}
+      if (!in_array(null, $tab)) {
+	$collection = new MongoCollection($db, 'recent');
+	$collection->insert(array('search' => $keyword, 'stats' => array_count_values(array_map(function($foo){return $foo['SentimentA'];}, $tab))));
+      }
     }
     if (in_array(null, $tab)) {
       $tab[$i]["text"] = 'Null';
@@ -149,9 +159,8 @@ class DefaultController extends Controller
       $tab[$i]["username"] = 'Null';
       $tab[$i]["id_str"] = 'Null';
       $tab[$i]["SentimentA"] = 'Null';
+      $tab[$i]["username_img"] = "https://gp3.googleusercontent.com/-_aKQin46MIc/AAAAAAAAAAI/AAAAAAAAAAA/Vcs7-1e2R7E/s48-c-k-no/photo.jpg?sz=50";
     }
-    $collection = new MongoCollection($db, 'recent');
-    $collection->insert(array('search' => $keyword, 'stats' => array_count_values(array_map(function($foo){return $foo['SentimentA'];}, $tab))));
     return $this->render('SearchTweetBundle:Default:show_advanced.html.twig', array("data" => $tab, "search" => $search));
   }
 
