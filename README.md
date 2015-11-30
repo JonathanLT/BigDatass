@@ -12,6 +12,9 @@
 - Éxécuter `chmod -R 777 app/cache/ app/logs/` pour que les dossiers soit totalement accessible pour Symfony2
 - Let's go !
 
+## Problème possible
+- Une érreur liée à la DB surgit de façon aléatoire, nous n'avons pas trouvés de solution pour la corriger de manière permanent, mais nous avons trouvé un moyen de la fix pour un moment. Il suffit de drop la collection `recent` et de recharger le site.
+
 ## Équipe de développement pour ce projet
 - [Allisson CROS](cros_a@etna-alternance.net)
 - [Raphael DEBRAY](debray_r@etna-alternance.net)
