@@ -35,7 +35,6 @@ class DefaultController extends Controller
       if (isset($keyword) && !empty($keyword)) {
 	$collection = new MongoCollection($db, 'tweets');
 	$cursor = $collection->find();
-	file_put_contents("/var/www/html/test", print_r($cursor, true));
 	$settings = array(
 			  'oauth_access_token' => "4283699608-BaKzBztpWnO4JQoXqbGr8tK3eOAHdw0baI1l1KZ",
 			  'oauth_access_token_secret' => "pbJVfRMPCrsgdjXddJL5E5y5ymrrO1dkWkUulDoVfu7lW",
