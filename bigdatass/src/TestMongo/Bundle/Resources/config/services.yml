@@ -1,4 +1,0 @@
-services:
-#    test_mongo.example:
-#        class: TestMongo\Bundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,9 +1,0 @@
-// src/Acme/StoreBundle/Document/Product.php
-namespace Acme\StoreBundle\Document;
-
-class Product
-{
-  protected $name;
-
-  protected $price;
-}

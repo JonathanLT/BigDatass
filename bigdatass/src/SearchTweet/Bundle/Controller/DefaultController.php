@@ -20,7 +20,6 @@ class DefaultController extends Controller
     $db = $m->selectDB('bigdatass');
     $collection = new MongoCollection($db, 'recent');
     $data = $collection->find();
-    file_put_contents("/var/www/html/test", print_r($data, true));
     return $this->render('SearchTweetBundle:Default:index.html.twig', array("data" => $data));
   }
 
